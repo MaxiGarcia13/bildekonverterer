@@ -2,6 +2,8 @@
 
 This project allow you transform images faster and simpler.
 
+Before I had it in Gitlab. i decide to move to github 🥳
+
 ## How can you run all project?
 
 ```
