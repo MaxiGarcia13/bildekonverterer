@@ -2,7 +2,7 @@
   "name": "bildekonverterer",
   "version": "1.0.0",
   "description": "This project transform images faster and simpler",
-  "main": "index.js",
+  "main": "app.js",
   "private": true,
   "workspaces": [
     "web",
