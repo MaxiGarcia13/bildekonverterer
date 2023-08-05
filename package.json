@@ -15,7 +15,7 @@
     "dev:api": "cd ./api && npm run dev",
     "build:web": "cd ./web && npm run build",
     "create_public_src": "mkdir -p ./public",
-    "create_api_assets": "mkdir -p ./public/assets/transformed && touch ./public/assets/transformed/fake.txt && mkdir -p ./public/assets/uploads && touch ./public/assets/uploads/fake.txt",
+    "create_api_assets": "mkdir -p ./api/public/assets/transformed && touch ./api/public/assets/transformed/fake.txt && mkdir -p ./api/public/assets/uploads && touch ./api/public/assets/uploads/fake.txt",
     "move_dist_to_public_src": "cp -r ./web/dist/* ./public/."
   },
   "repository": {
