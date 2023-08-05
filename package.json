@@ -35,9 +35,6 @@
     "url": "https://github.com/MaxiGarcia13/bildekonverterer/issues"
   },
   "homepage": "https://github.com/MaxiGarcia13/bildekonverterer#readme",
-  "dependencies": {
-    "vercel": "^31.2.2"
-  },
   "engines": {
     "node": "18.x"
   }
