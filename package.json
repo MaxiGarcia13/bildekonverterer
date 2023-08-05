@@ -8,13 +8,14 @@
     "api"
   ],
   "scripts": {
-    "build": "npm run build:web && npm run create_public_src && npm run move_dist_to_public_src",
+    "build": "npm run build:web && npm run create_public_src && npm run move_dist_to_public_src && npm run create_api_assets",
     "start": "node index.js",
     "start:api": "cd ./api && npm run start",
     "dev:web": "cd ./web && npm run start",
     "dev:api": "cd ./api && npm run dev",
     "build:web": "cd ./web && npm run build",
     "create_public_src": "mkdir -p ./public",
+    "create_api_assets": "mkdir -p ./public/assets/transformed && mkdir -p ./public/assets/uploads",
     "move_dist_to_public_src": "cp -r ./web/dist/* ./public/."
   },
   "repository": {

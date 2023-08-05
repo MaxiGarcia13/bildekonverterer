@@ -4,8 +4,9 @@
   "description": "Image Processing Server",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "npm run create_api_assets && node index.js",
+    "dev": "npm run create_api_assets &&  nodemon index.js",
+    "create_api_assets": "mkdir -p ./public/assets/transformed && mkdir -p ./public/assets/uploads"
   },
   "repository": {
     "type": "git",
