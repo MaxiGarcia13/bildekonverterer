@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "build": "npm run build:web && npm run create_public_src && npm run move_dist_to_public_src",
-    "start": "node index.js",
+    "start": "npm run build && node index.js",
     "start:api": "cd ./api && npm run start",
     "dev:web": "cd ./web && npm run start",
     "dev:api": "cd ./api && npm run dev",
@@ -34,5 +34,8 @@
   "bugs": {
     "url": "https://github.com/MaxiGarcia13/bildekonverterer/issues"
   },
-  "homepage": "https://github.com/MaxiGarcia13/bildekonverterer#readme"
+  "homepage": "https://github.com/MaxiGarcia13/bildekonverterer#readme",
+  "dependencies": {
+    "vercel": "^31.2.2"
+  }
 }
