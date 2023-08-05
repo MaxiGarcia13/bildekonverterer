@@ -1,5 +1,5 @@
-const url_upload_file = '../../public/assets/uploads';
-const url_transformed_file = '../../public/assets/transformed';
+const url_upload_file = 'assets/uploads';
+const url_transformed_file = 'assets/transformed';
 
 module.exports = {
     url_upload_file,
