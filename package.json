@@ -2,7 +2,6 @@
   "name": "bildekonverterer",
   "version": "1.0.0",
   "description": "This project transform images faster and simpler",
-  "main": "app.js",
   "private": true,
   "workspaces": [
     "web",
@@ -34,8 +33,5 @@
   "bugs": {
     "url": "https://github.com/MaxiGarcia13/bildekonverterer/issues"
   },
-  "homepage": "https://github.com/MaxiGarcia13/bildekonverterer#readme",
-  "engines": {
-    "node": "18.x"
-  }
+  "homepage": "https://github.com/MaxiGarcia13/bildekonverterer#readme"
 }
