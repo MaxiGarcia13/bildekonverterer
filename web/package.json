@@ -2,7 +2,6 @@
   "name": "bildekonverterer_web",
   "version": "1.0.0",
   "description": "This project use for converter imagen fast and simple",
-  "main": "index.js",
   "scripts": {
     "build": "parcel build public/index.html --no-source-maps",
     "start": "parcel public/index.html --open --port 9000"
