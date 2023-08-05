@@ -5,6 +5,7 @@ This project allow you transform images faster and simpler.
 ## How can you run all project?
 
 ```
+npm run build
 npm run start
 ```
 

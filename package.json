@@ -9,7 +9,8 @@
     "api"
   ],
   "scripts": {
-    "start": "npm run build:web && npm run create_public_src && npm run move_dist_to_public_src && node index.js",
+    "build": "npm run build:web && npm run create_public_src && npm run move_dist_to_public_src",
+    "start": "node index.js",
     "start:api": "cd ./api && npm run start",
     "dev:web": "cd ./web && npm run start",
     "dev:api": "cd ./api && npm run dev",
