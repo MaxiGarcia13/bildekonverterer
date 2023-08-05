@@ -1,0 +1,36 @@
+{
+  "name": "bildekonverterer",
+  "version": "1.0.0",
+  "description": "This project transform images faster and simpler",
+  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "web",
+    "api"
+  ],
+  "scripts": {
+    "start": "npm run build:web && npm run create_public_src && npm run move_dist_to_public_src && node index.js",
+    "start:api": "cd ./api && npm run start",
+    "dev:web": "cd ./web && npm run start",
+    "build:web": "cd ./web && npm run build",
+    "create_public_src": "mkdir -p ./public/src",
+    "move_dist_to_public_src": "cp -r ./web/dist/* ./public/src/."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaxiGarcia13/bildekonverterer.git"
+  },
+  "keywords": [
+    "transform",
+    "images",
+    "sharp",
+    "image",
+    "processesor"
+  ],
+  "author": "Maximiliano Garcia Mortigliengo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaxiGarcia13/bildekonverterer/issues"
+  },
+  "homepage": "https://github.com/MaxiGarcia13/bildekonverterer#readme"
+}
