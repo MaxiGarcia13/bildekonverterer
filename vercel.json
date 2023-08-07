@@ -4,11 +4,11 @@
   "redirects": [
     {
       "source": "/converter",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/aboutMe",
-      "destination": "/index.html"
+      "destination": "/"
     }
   ]
 }
