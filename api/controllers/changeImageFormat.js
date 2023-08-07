@@ -3,6 +3,8 @@ const sharp = require('sharp');
 
 const { url_upload_file } = require('../constant/config');
 
+const BASE_FILENAME = "transformed";
+
 module.exports = class ChangeImageFormatCtrl {
     static async post(req, res, next) {
         try {
@@ -40,21 +42,22 @@ module.exports = class ChangeImageFormatCtrl {
 };
 
 const processingImage = async (file, width, height, imageFormat) => {
+    const realFileName = `${file.path}`;
     let fileName = file.filename.split('.');
     fileName[fileName.length - 1] = imageFormat;
     fileName = fileName.join('.');
-    const realFileName = `${file.path}`.replace(fileName[0],`upload-${fileName[0]}`)
 
     try {
+        const transformedFilename = `${BASE_FILENAME}-${fileName}`;
         await sharp(realFileName)
             .resize({ width: +width, height: +height })
             .clone()
             .toFormat(imageFormat)
-            .toFile(`${url_upload_file}/${fileName}`);
+            .toFile(`${url_upload_file}/${transformedFilename}`);
 
         fs.unlinkSync(realFileName);
 
-        return fileName;
+        return transformedFilename;
     } catch (error) {
         fs.unlinkSync(realFileName);
 
