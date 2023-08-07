@@ -40,10 +40,11 @@ module.exports = class ChangeImageFormatCtrl {
 };
 
 const processingImage = async (file, width, height, imageFormat) => {
-    const realFileName = file.path;
+    const realFileName = `${file.path}`;
     let fileName = file.filename.split('.');
     fileName[fileName.length - 1] = imageFormat;
     fileName = fileName.join('.');
+    realFileName.replace(fileName[0],`upload-${fileName[0]}`)
 
     try {
         await sharp(realFileName)
