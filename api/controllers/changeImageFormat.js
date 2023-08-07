@@ -1,7 +1,7 @@
 const fs = require('fs');
 const sharp = require('sharp');
 
-const { url_transformed_file } = require('../constant/config');
+const { url_upload_file } = require('../constant/config');
 
 module.exports = class ChangeImageFormatCtrl {
     static async post(req, res, next) {
@@ -28,11 +28,9 @@ module.exports = class ChangeImageFormatCtrl {
         try {
             const { fileName } = req.params;
 
-            const relative_path = getRelativeRoute(url_transformed_file);
-
-            res.sendFile(`${relative_path}/${fileName}`);
+            res.sendFile(`${url_upload_file}/${fileName}`);
             setTimeout(() => {
-                fs.unlinkSync(`./${url_transformed_file}/${fileName}`);
+                fs.unlinkSync(`${url_upload_file}/${fileName}`);
             }, 1000);
         } catch (error) {
             console.error(error);
@@ -42,9 +40,8 @@ module.exports = class ChangeImageFormatCtrl {
 };
 
 const processingImage = async (file, width, height, imageFormat) => {
-    const realFileName = getRelativeRoute(file.path);
+    const realFileName = file.path;
     let fileName = file.filename.split('.');
-
     fileName[fileName.length - 1] = imageFormat;
     fileName = fileName.join('.');
 
@@ -53,17 +50,14 @@ const processingImage = async (file, width, height, imageFormat) => {
             .resize({ width: +width, height: +height })
             .clone()
             .toFormat(imageFormat)
-            .toFile(`./${url_transformed_file}/${fileName}`);
+            .toFile(`${url_upload_file}/${fileName}`);
 
         fs.unlinkSync(realFileName);
 
         return fileName;
     } catch (error) {
         fs.unlinkSync(realFileName);
-        fs.unlinkSync(fileName);
 
         throw error;
     }
 };
-
-const getRelativeRoute = (path) => __dirname.replace('controllers', path);

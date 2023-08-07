@@ -9,7 +9,7 @@ const { url_upload_file } = require('../constant/config');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, `./${url_upload_file}`);
+        cb(null, url_upload_file);
     },
     filename: function (req, file, cb) {
         let filenameArray = file.originalname.split('.');
@@ -29,13 +29,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan(':method [:status] :url :res[content-length] - :response-time ms'));
 
 //Resources
-app.use(express.static(path.join(__dirname, '../public/assets')));
-app.use(express.static(path.join(__dirname, '../public/src')));
+app.use(express.static(path.join(__dirname, '../assets')));
 
 // End points
 app.use('/api/v1/changeImageFormat', upload.array('files', 5), changeImageFormatRoutes);
-
-// Not found
-app.use('/*', express.static(path.join(__dirname, '../public/src/index.html')));
 
 module.exports = app;
