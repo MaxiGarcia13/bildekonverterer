@@ -44,7 +44,7 @@ const processingImage = async (file, width, height, imageFormat) => {
     let fileName = file.filename.split('.');
     fileName[fileName.length - 1] = imageFormat;
     fileName = fileName.join('.');
-    realFileName.replace(fileName[0],`upload-${fileName[0]}`)
+    realFileName = realFileName.replace(fileName[0],`upload-${fileName[0]}`)
 
     try {
         await sharp(realFileName)
